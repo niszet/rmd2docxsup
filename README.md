@@ -5,10 +5,8 @@
 
 [![Coverage
 status](https://codecov.io/gh/niszet/rmd2docxsup/branch/master/graph/badge.svg)](https://codecov.io/github/niszet/rmd2docxsup?branch=master)
-
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rmd2docxsup)](https://cran.r-project.org/package=rmd2docxsup)
-
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 The goal of rmd2docxsup is to support for create Word document from R
