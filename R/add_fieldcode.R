@@ -21,7 +21,7 @@ fieldcode_page <- function(){
 #'
 #' @export
 #'
-add_index <- function(word, sound, word2=NULL, sound2=NULL, ref=NULL,
+add_index_item <- function(word, sound, word2=NULL, sound2=NULL, ref=NULL,
                       bold=NULL, italic=NULL){
   head <- fieldcode_begin()
   body <- sprintf("%s%s%s%s%s", 'XE "', word, ":", sound, '"')
@@ -42,6 +42,33 @@ add_index <- function(word, sound, word2=NULL, sound2=NULL, ref=NULL,
   tail <- fieldcode_end()
   sprintf("%s%s%s",head,body,tail)
 }
+
+#'
+add_index <- function(){
+  head <- fieldcode_begin()
+
+  body <- sprintf("%s%s%s", '<w:r><w:instrText>','INDEX \\e " · " \\h "A" \\c "2" \\z "1033"', '</w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r>')
+
+  tail <- fieldcode_end()
+  sprintf("%s%s%s",head,body,tail)
+
+}
+
+#'
+add_index2 <- function(){
+  head <- fieldcode_begin()
+  body <- fieldcode_body('INDEX \\y \\c "2" \\z "1041"')
+  tail <- fieldcode_end()
+sprintf("%s%s%s",head,body,tail)
+}
+
+
+#
+add_index4 <- function() {
+  sprintf("%s%s%s", p_begin(), '<w:fldSimple w:instr=" INDEX \\y \\c 1 \\z 1041 "><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:b/><w:bCs/><w:noProof/></w:rPr><w:t>Not Found</w:t></w:r></w:fldSimple>', p_end()
+)
+}
+
 
 ooxml_begin <- function(){
   "```{=openxml}\n"

@@ -1,4 +1,5 @@
-
+#' @export
+#'
 add_figure <- function(caption, file, width=NULL){
   if (is.null(width)) {
     sprintf("![%s](%s)\n", caption, file)
