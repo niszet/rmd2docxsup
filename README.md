@@ -8,6 +8,8 @@ status](https://codecov.io/gh/niszet/rmd2docxsup/branch/master/graph/badge.svg)]
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rmd2docxsup)](https://cran.r-project.org/package=rmd2docxsup)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Build
+Status](https://travis-ci.org/niszet/rmd2docxsup.svg?branch=master)](https://travis-ci.org/niszet/rmd2docxsup)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
 The goal of rmd2docxsup is to support for create Word document from R
