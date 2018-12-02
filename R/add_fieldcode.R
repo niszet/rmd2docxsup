@@ -6,12 +6,38 @@
 #'
 #' @export
 #'
+add_fieldcode <- function(code, text){
+  head <- fieldcode_begin()
+  body <- fieldcode_body(code, text)
+  tail <- fieldcode_end()
+  sprintf("%s%s%s",head,body,tail)
+}
+
+#' hoge
+#'
+#' hoge
+#'
+#' hoge
+#'
+#' @export
+#'
 fieldcode_page <- function(){
   head <- fieldcode_begin()
   body <- fieldcode_body("PAGE   \\* MERGEFORMAT", 1)
   tail <- fieldcode_end()
   sprintf("%s%s%s",head,body,tail)
 }
+
+add_author <- function(){
+'  <w:p>
+    <w:fldSimple w:instr="AUTHOR">
+      <w:r>
+      <w:t>Marcel Proust</w:t>
+      </w:r>
+      </w:fldSimple>
+      </w:p>'
+}
+
 
 #' hoge
 #'
