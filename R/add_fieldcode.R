@@ -1,8 +1,11 @@
-#' hoge
+#' Add any field code
+#'
+#' General use of adding field code
 #'
 #' hoge
 #'
-#' hoge
+#' @param code filed code
+#' @param text default text
 #'
 #' @export
 #'
@@ -29,13 +32,10 @@ fieldcode_page <- function(){
 }
 
 add_author <- function(){
-'  <w:p>
-    <w:fldSimple w:instr="AUTHOR">
-      <w:r>
-      <w:t>Marcel Proust</w:t>
-      </w:r>
-      </w:fldSimple>
-      </w:p>'
+  sprintf("%s%s%s", p_begin(),
+  '<w:fldSimple w:instr="AUTHOR"><w:r><w:t>niszet</w:t></w:r></w:fldSimple>',
+      p_end()
+      )
 }
 
 
@@ -63,7 +63,6 @@ add_index_item <- function(word, sound, word2=NULL, sound2=NULL, ref=NULL,
 
   body <- fieldcode_body(body, "")
 
-  # body <- fieldcode_body('XE "大岡山:OBIRCH" \\y "おおおかやま:おばーく" \\t "→" \\b \\i', "")
   # body <- NULL
   tail <- fieldcode_end()
   sprintf("%s%s%s",head,body,tail)
@@ -120,7 +119,7 @@ fieldchar_end <- function(){
   '<w:r><w:fldChar w:fldCharType="end"/></w:r>'
 }
 
-
+# to amke header of filecode which consists of ooxml, p and fieldchar blaocks.
 fieldcode_begin <- function(){
   paste0(ooxml_begin(), p_begin(), fieldchar_begin())
 }
